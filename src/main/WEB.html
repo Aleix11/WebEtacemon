@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body {
-            background-image: url('/java/images/fondo.jpeg');
+            background-image: url("/java/images/fondo.jpeg");
             width: 100% ;
             height: 100% ;
             margin: 0 ;
@@ -19,11 +19,13 @@
         }
         h1{
             color: white;
+            text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
             text-align: center;
             padding: 20px 0;
         }
         h2{
             text-align: center;
+            padding: 50px;
         }
 
     </style>
@@ -32,7 +34,7 @@
 <body>
 
 <h2>
-<img scr = "/java/images/nom.png" style="width:454px;height:228px;">
+<img scr = "/java/images/nom.png" style="width:640px;height:146px;">
 </h2>
 <div class="container">
     <h1>
@@ -44,5 +46,7 @@
     <button type="button" class="btn btn-success btn-lg">Registrarse!</button>
     </h2>
 </div>
+<div style="position:absolute; width:100%; bottom: 1px; text-align: right; color: white">
+    Trabajo realizado por: Aleix Cánovas, Mikel Garralaga, Guillem Muñoz y José Antonio
 </body>
 </html>
