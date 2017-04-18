@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        var ctxPath = "http://10.192.91.239:8081/dsa/";
+        $(document).ready(function(){
+            $("#btn2").click(function (){
+                var name= $("#name").val();
+                var password= $("#password").val();
+                var email= $("#email").val();
+                $.post("/newUsuario",{name:name,password:password, email:email},function(responseText) {
+                    if(responseText!="Usuario añadido: ") {
+                        document.cookie=name;
+                    }
+                    else{$("#res").text(responseText);}
+                });
+            });
+        };
+    </script>
     <style>
         body {
             background-image: url("java/images/fondo.jpeg");
@@ -67,10 +83,10 @@
     </h3>
 </div>
 <h1>
-    Nombre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="nombre" ><br><br>
-    Contraseña: <input type="text" name="contraseña"><br><br>
-    E-mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="e-mail" ><br><br>
-    <button type="button" class="btn btn-success btn-lg">Registrarse!</button><br>
+    Nombre: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="name" ><br><br>
+    Contraseña: <input type="text" id="password"><br><br>
+    E-mail: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="email" ><br><br>
+    <button type="button" id="btn2" class="btn btn-success btn-lg">Registrarse!</button><br>
 </h1>
 <h4><a href="#" class="fa fa-facebook"></a></h4>
 </body>
